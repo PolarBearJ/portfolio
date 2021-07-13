@@ -2,6 +2,7 @@ import "./topbar.scss";
 import { Person, Mail } from "@material-ui/icons";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 export default function Topbar({ menuOpen, setMenuOpen }) {
   return (
     <div className={"topbar " + (menuOpen && "active")}>
@@ -25,6 +26,12 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
           <div className="itemContainer">
             <LinkedInIcon className="icon" />
             <span>linkedin.com/in/joshua-m-stevens/</span>
+          </div>
+          <div className="itemContainer">
+            <PictureAsPdfIcon className="icon" />
+            <a href="assets/resume.pdf" without rel="noopener noreferrer" target="_blank">
+                Resume
+            </a>
           </div>
         </div>
         <div className="right">
