@@ -18,7 +18,7 @@ const Toggle = styled.button`
     &:focus {
         outline: none;
     }
-    transition: all .25s ease;
+    transition: all .5s ease;
 `;
 
 
@@ -31,8 +31,9 @@ export default function Topbar({ menuOpen, setMenuOpen, theme, setTheme }){
     }
   };
   const icon = theme === "light" ? <Brightness5Icon /> : < Brightness3Icon/>;
+  const topbar = theme === "light" ? 'topbar-light' : 'topbar-dark';
   return (
-    <div className={"topbar-light " + (menuOpen && "active")}>
+    <div className={topbar + " " + (menuOpen && "active")}>
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">

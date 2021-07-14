@@ -1,14 +1,14 @@
 @import "../../global.scss";
 .slow-trans {
-  transition: all .25s ease;
+  transition: all .5s ease;
 }
 .light-intro {
   color: black;
-  transition: all .25s ease;
+  transition: all .5s ease;
 }
 .dark-intro {
   color: #DEF2FF;
-  transition: all .25s ease;
+  transition: all .5s ease;
 }
 figcaption {
   position: absolute;
@@ -22,7 +22,7 @@ figcaption {
 .intro-light {
   background-color: #F9FDFF;
   display: flex;
-  transition: all .25s ease;
+  transition: all .5s ease;
 
   @include mobile{
     flex-direction: column;
@@ -132,7 +132,7 @@ figcaption {
 .intro-dark {
   background-color: #121212;
   display: flex;
-  transition: all .25s ease;
+  transition: all .5s ease;
 
   @include mobile{
     flex-direction: column;
