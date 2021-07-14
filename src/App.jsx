@@ -32,7 +32,7 @@ function App() {
      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} theme={theme} setTheme={setTheme}/>
      <div className="sections">
        <Intro theme={theme}/>
-       <Portfolio/>
+       <Portfolio theme={theme}/>
        <Works/>
        <Contact/>
      </div>
