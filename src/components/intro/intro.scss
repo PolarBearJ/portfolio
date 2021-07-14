@@ -1,16 +1,28 @@
 @import "../../global.scss";
-
+.slow-trans {
+  transition: all .25s ease;
+}
+.light-intro {
+  color: black;
+  transition: all .25s ease;
+}
+.dark-intro {
+  color: #DEF2FF;
+  transition: all .25s ease;
+}
 figcaption {
   position: absolute;
   bottom: 2rem;
   margin: 22rem 20rem;
   font-size: 40px;
   width: 1000px;
+  transition: all .5s ease;
 }
 
-.intro {
-  background-color: white;
+.intro-light {
+  background-color: #F9FDFF;
   display: flex;
+  transition: all .25s ease;
 
   @include mobile{
     flex-direction: column;
@@ -21,10 +33,10 @@ figcaption {
     flex: 0.5;
     overflow: hidden;
 
-    .imgContainer {
+    .img-fluid {
       width: 1400px;
       height: 700px;
-      background-color: white;
+      background-color: transparent;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -82,7 +94,7 @@ figcaption {
 
         span {
           font-size: inherit;
-          color: cornflowerblue;
+          color: $mainColor-light;
         }
 
         .ityped-cursor {
@@ -102,7 +114,7 @@ figcaption {
     a {
       position: absolute;
       bottom: 10px;
-      left: 45%;
+      left: 48%;
 
       img {
         width: 30px;
@@ -115,4 +127,114 @@ figcaption {
         }
       }
     }
+}
+
+.intro-dark {
+  background-color: #121212;
+  display: flex;
+  transition: all .25s ease;
+
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    .img-fluid {
+      width: 1400px;
+      height: 700px;
+      background-color: transparent;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+
+      @include mobile{
+        align-items: flex-start;
+      }
+
+      img {
+        height: 90%;
+
+        @include mobile{
+          height: 50%;
+        }
+      }
+    }
+  }
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mobile{
+      padding-left: 0;
+      align-items: center;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: 4rem;
+      font-size: 60px;
+      margin: 10px 0;
+
+      @include mobile{
+        font-size: 40px;
+      }
+    }
+    h2 {
+      position: absolute;
+      bottom: 4rem;
+      font-size: 35px;
+    }
+    h3 {
+      margin-left: 200px;
+      margin-top: 80px;
+      font-size: 30px;
+
+      @include mobile{
+        font-size: 20px;
+      }
+
+      span {
+        font-size: inherit;
+        color: $mainColor-dark;
+      }
+
+      .ityped-cursor {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        50%{
+          opacity: 1;
+        }
+        100%{
+          opacity: 0;
+        }
+      }
+    }
+  }
+  a {
+    position: absolute;
+    bottom: 10px;
+    left: 48%;
+
+    img {
+      width: 30px;
+      animation: arrowBlink 2s infinite;
+    }
+
+    @keyframes arrowBlink {
+      100% {
+        opacity: 0;
+      }
+    }
+  }
 }
