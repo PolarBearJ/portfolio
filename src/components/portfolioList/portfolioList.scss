@@ -1,6 +1,7 @@
 @import "../../global.scss";
 
-.portfolioList {
+.portfolioList-light {
+  transition: all .5s ease;
   font-size: 14px;
   margin-right: 50px;
   padding: 7px;
@@ -11,8 +12,26 @@
     margin-right: 20px;
   }
 
-  &.active {
+  &.active-light {
     background-color: $mainColor-light;
     color: white;
+  }
+}
+.portfolioList-dark {
+  transition: all .5s ease;
+  font-size: 14px;
+  margin-right: 50px;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: $text-dark;
+
+  @include mobile{
+    margin-right: 20px;
+  }
+
+  &.active-dark {
+    background-color: $mainColor-dark;
+    color: $background-dark;
   }
 }

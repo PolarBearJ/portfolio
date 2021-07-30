@@ -1,6 +1,6 @@
 @import "../../global.scss";
 .light-intro {
-  background-color: #F9FDFF;
+  background-color: $background-light;
 }
 .light-intro {
   background-color: black;
@@ -8,7 +8,7 @@
 .topbar-light {
   width: 100%;
   height: 70px;
-  background-color: #F9FDFF;
+  background-color: $background-light;
   color: $mainColor-light;
   position: fixed;
   top: 0;
@@ -105,7 +105,7 @@
 .topbar-dark {
   width: 100%;
   height: 70px;
-  background-color: #121212;
+  background-color: $background-dark;
   color: $mainColor-dark;
   position: fixed;
   top: 0;

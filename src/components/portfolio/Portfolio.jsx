@@ -7,7 +7,10 @@ import {
   hardware,
 } from "../../data";
 
-export default function Portfolio() {
+export default function Portfolio({theme}) {
+
+  const light = theme === "light" ? true : false;
+
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
   const list = [
@@ -42,7 +45,7 @@ export default function Portfolio() {
   }, [selected]);
 
   return (
-    <div className="portfolio" id="portfolio">
+    <div className={light ? 'portfolio-light' : 'portfolio-dark'} id="portfolio">
       <h1>Projects</h1>
       <ul>
         {list.map((item) => (
@@ -51,6 +54,7 @@ export default function Portfolio() {
             active={selected === item.id}
             setSelected={setSelected}
             id={item.id}
+            light={light}
           />
         ))}
       </ul>

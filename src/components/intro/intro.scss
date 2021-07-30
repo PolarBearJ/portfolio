@@ -7,7 +7,7 @@
   transition: all .5s ease;
 }
 .dark-intro {
-  color: #DEF2FF;
+  color: $text-dark;
   transition: all .5s ease;
 }
 figcaption {
@@ -20,7 +20,7 @@ figcaption {
 }
 
 .intro-light {
-  background-color: #F9FDFF;
+  background-color: $background-light;
   display: flex;
   transition: all .5s ease;
 
@@ -130,7 +130,7 @@ figcaption {
 }
 
 .intro-dark {
-  background-color: #121212;
+  background-color: $background-dark;
   display: flex;
   transition: all .5s ease;
 
