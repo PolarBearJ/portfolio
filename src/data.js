@@ -1,13 +1,13 @@
 export const featuredPortfolio = [
     {
       id: 1,
-      title: "This Website \n (React)",
+      title: "This Website (React)",
       img:
         "https://i.ibb.co/kJdqP4H/Screen-Shot-2021-07-29-at-9-14-01-PM.png",
     },
     {
       id: 2,
-      title: "Top Down video game \n (Java)",
+      title: "Top Down video game (Java)",
       img:
         "https://i.ibb.co/KmXZpB5/Screen-Shot-2021-07-29-at-9-15-29-PM.png",
     },

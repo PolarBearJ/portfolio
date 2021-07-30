@@ -10,6 +10,7 @@ import { ThemeProvider } from "styled-components";
 
 function App() {
   const [menuOpen,setMenuOpen] = useState(false)
+    const [lang, setLang] = useState("EN")
     const [theme, setTheme] = useState("light")
     const LightTheme = {
         pageBackground: "white",
@@ -28,13 +29,13 @@ function App() {
   return (
       <ThemeProvider theme={themes[theme]}>
     <div className="app">
-     <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} theme={theme} setTheme={setTheme}/>
-     <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} theme={theme} setTheme={setTheme}/>
+     <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} theme={theme} setTheme={setTheme} lang={lang}/>
+     <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang}/>
      <div className="sections">
-       <Intro theme={theme}/>
-       <Portfolio theme={theme}/>
-       <Works theme={theme}/>
-       <Contact theme={theme}/>
+       <Intro theme={theme} lang={lang}/>
+       <Portfolio theme={theme} lang={lang}/>
+       <Works theme={theme} lang={lang}/>
+       <Contact theme={theme} lang={lang}/>
      </div>
     </div>
       </ThemeProvider>

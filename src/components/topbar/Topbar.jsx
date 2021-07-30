@@ -6,6 +6,9 @@ import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import styled from "styled-components";
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/DropdownButton'
+
 
 const Toggle = styled.button`
     cursor: pointer;
@@ -22,7 +25,25 @@ const Toggle = styled.button`
 `;
 
 
-export default function Topbar({ menuOpen, setMenuOpen, theme, setTheme }){
+export default function Topbar({ menuOpen, setMenuOpen, theme, setTheme, lang}){
+  var en = {
+    "Resume": "Resume",
+  }
+  var fr = {
+    "Resume": "Résumé",
+  }
+  var la = {}
+  switch(lang){
+    case "EN":
+      la = en;
+      break;
+    case "FR":
+      la = fr
+      break;
+    default:
+      la = en;
+      break;
+  }
   function changeTheme() {
     if (theme === "light") {
       setTheme("dark");
@@ -58,7 +79,7 @@ export default function Topbar({ menuOpen, setMenuOpen, theme, setTheme }){
           <div className="itemContainer">
             <PictureAsPdfIcon className="icon" />
             <a href="assets/resume.pdf" without rel="noopener noreferrer" target="_blank" className="resume">
-                Resume
+              {la["Resume"]}
             </a>
           </div>
           <div className="itemContainer">

@@ -4,15 +4,41 @@ import { useEffect, useRef } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
 
-export default function Intro({theme}) {
+export default function Intro({theme, lang}) {
   const textRef = useRef();
+  var en = {
+      "Developer": "Developer",
+      "Engineer": "Engineer",
+      "Student": "Student",
+      "introduction": "Hello, my name is Joshua Stevens"
+
+  }
+  var fr = {
+      "Developer": "Développeur",
+      "Engineer": "Ingénieur",
+      "Student": "Étudiant",
+      "introduction": "Bonjour, je m'appelle Joshua Stevens"
+  }
+  var la = {}
+  switch(lang){
+      case "EN":
+          la = en;
+          break;
+      case "FR":
+          la = fr
+          break;
+      default:
+          la = en;
+          break;
+  }
+  var strings = [la["Developer"], la["Engineer"], la["Student"]];
 
   useEffect(() => {
     init(textRef.current, {
       showCursor: true,
       backDelay: 1500,
       backSpeed:60,
-      strings: ["Developer", "Engineer", "Student"],
+      strings: strings,
     });
   }, []);
     const light = theme === "light" ? true : false;
@@ -30,7 +56,7 @@ export default function Intro({theme}) {
                   <div style={{
                       color: light ? 'black' : 'white'
                   }}>
-                  Hello, my name is Joshua Stevens
+                      {la["introduction"]}
                   </div>
                   <div className="wrapper">
                   <h3>

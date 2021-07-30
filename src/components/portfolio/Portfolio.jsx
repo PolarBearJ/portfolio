@@ -7,7 +7,51 @@ import {
   hardware,
 } from "../../data";
 
-export default function Portfolio({theme}) {
+export default function Portfolio({theme, lang}) {
+  var en = {
+    "Projects": "Projects",
+    "Featured": "Featured",
+    "Software": "Software",
+    "Hardware": "Hardware",
+    "This Website (React)": "This Website (React)",
+    "Top Down video game (Java)": "Top Down video game (Java)",
+    "White Noise Remover (Python)": "White Noise Remover (Python)",
+    "3D Printer": "3D Printer",
+    "CNC Plotter": "CNC Plotter",
+    "Sudoku Solver (C)": "Sudoku Solver (C)",
+    "False-Position (MATLAB)": "False-Position (MATLAB)",
+    "Slapshot! (JavaFX)": "Slapshot! (JavaFX)",
+    "CPU Fan": "CPU Fan",
+    "Remote Control Light Switch": "Remote Control Light Switch"
+  }
+  var fr = {
+    "Projects": "Projets",
+    "Featured": "En vedette",
+    "Software": "Logiciel",
+    "Hardware": "Matériel",
+    "This Website (React)": "Ce site Web (React)",
+    "Top Down video game (Java)": "Jeu vidéo de haut en bas (Java)",
+    "White Noise Remover (Python)": "Suppresseur de bruit blanc (Python)",
+    "3D Printer": "Imprimante 3D",
+    "CNC Plotter": "Traceur CNC",
+    "Sudoku Solver (C)": "Solveur de Sudoku (C)",
+    "False-Position (MATLAB)": "Fausse-Position (MATLAB)",
+    "Slapshot! (JavaFX)": "Slapshot! (JavaFX)",
+    "CPU Fan": "Ventilateur de CPU",
+    "Remote Control Light Switch": "Interrupteur d'éclairage à télécommande"
+  }
+  var la = {}
+  switch(lang){
+    case "EN":
+      la = en;
+      break;
+    case "FR":
+      la = fr
+      break;
+    default:
+      la = en;
+      break;
+  }
 
   const light = theme === "light" ? true : false;
 
@@ -46,11 +90,11 @@ export default function Portfolio({theme}) {
 
   return (
     <div className={light ? 'portfolio-light' : 'portfolio-dark'} id="portfolio">
-      <h1>Projects</h1>
+      <h1>{la["Projects"]}</h1>
       <ul>
         {list.map((item) => (
           <PortfolioList
-            title={item.title}
+            title={la[item.title]}
             active={selected === item.id}
             setSelected={setSelected}
             id={item.id}
@@ -65,7 +109,7 @@ export default function Portfolio({theme}) {
               src={d.img}
               alt=""
             />
-            <h3>{d.title}</h3>
+            <h3>{la[d.title]}</h3>
           </div>
         ))}
       </div>
