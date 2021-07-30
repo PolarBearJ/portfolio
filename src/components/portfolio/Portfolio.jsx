@@ -33,10 +33,10 @@ export default function Portfolio({theme}) {
       case "featured":
         setData(featuredPortfolio);
         break;
-      case "web":
+      case "software":
         setData(software);
         break;
-      case "mobile":
+      case "hardware":
         setData(hardware);
         break;
       default:

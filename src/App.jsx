@@ -33,8 +33,8 @@ function App() {
      <div className="sections">
        <Intro theme={theme}/>
        <Portfolio theme={theme}/>
-       <Works/>
-       <Contact/>
+       <Works theme={theme}/>
+       <Contact theme={theme}/>
      </div>
     </div>
       </ThemeProvider>

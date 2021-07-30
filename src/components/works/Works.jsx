@@ -1,33 +1,34 @@
 import { useState } from "react";
 import "./works.scss";
 
-export default function Works() {
+export default function Works({theme}) {
+  const light = theme === "light" ? true : false;
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
       id: "1",
       icon: "./assets/mobile.png",
-      title: "Web Design",
+      title: "Full Stack Dev @ Verto Inc.",
       desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+        "Here I worked with a small team to deliver cutting edge technology for hospitals nation-wide.",
       img:
-        "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+        "https://i.ibb.co/2hw8pzH/Screen-Shot-2021-07-29-at-9-59-10-PM.png",
     },
     {
       id: "2",
       icon: "./assets/globe.png",
-      title: "Mobile Application",
+      title: "Oncologie Center",
       desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "At Verto, I helped build an oncology center for cancer patients who could no longer go to the hospital in person. Additionally I was the team lead for localizing the application for users in Quebec.",
       img:
         "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
     },
     {
       id: "3",
       icon: "./assets/writing.png",
-      title: "Branding",
+      title: "Online Vaccine Booking",
       desc:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "I was a part of a team who helped build an online vaccination widget which has been used to book +3.5 Million vaccines in Canada!",
       img:
         "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
     },
@@ -40,7 +41,7 @@ export default function Works() {
   };
   
   return (
-    <div className="works" id="works">
+    <div className={light ? 'works-light' : 'works-dark'} id="works">
       <div
         className="slider"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
@@ -55,12 +56,11 @@ export default function Works() {
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <span>Projects</span>
                 </div>
               </div>
               <div className="right">
                 <img
-                  src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930"
+                  src="https://i.ibb.co/2hw8pzH/Screen-Shot-2021-07-29-at-9-59-10-PM.png"
                   alt=""
                 />
               </div>

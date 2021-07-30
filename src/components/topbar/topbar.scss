@@ -106,7 +106,7 @@
   width: 100%;
   height: 70px;
   background-color: $background-dark;
-  color: $mainColor-dark;
+  color: $mainColor-light;
   position: fixed;
   top: 0;
   z-index: 3;
@@ -169,7 +169,7 @@
         span {
           width: 100%;
           height: 3px;
-          background-color: $mainColor-dark;
+          background-color: $mainColor-light;
           transform-origin: left;
           transition: all 2s ease;
         }
@@ -178,7 +178,7 @@
   }
 
   &.active {
-    background-color: $mainColor-dark;
+    background-color: $mainColor-light;
     color: white;
 
     .hamburger {
